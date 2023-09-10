@@ -14,8 +14,29 @@ import ipaddress
 import urllib.request as urllib
 import urllib.request as urlRequest
 import urllib.parse as urlParse
+from colorama import Fore
 
 from dotenv import load_dotenv
+
+def welcome():
+    banner = '''
+
+ █████╗ ██████╗ ██╗   ██╗███████╗███████╗██╗██████╗ ██████╗ ██████╗ 
+██╔══██╗██╔══██╗██║   ██║██╔════╝██╔════╝██║██╔══██╗██╔══██╗██╔══██╗
+███████║██████╔╝██║   ██║███████╗█████╗  ██║██████╔╝██║  ██║██████╔╝
+██╔══██║██╔══██╗██║   ██║╚════██║██╔══╝  ██║██╔═══╝ ██║  ██║██╔══██╗
+██║  ██║██████╔╝╚██████╔╝███████║███████╗██║██║     ██████╔╝██████╔╝
+╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚══════╝╚══════╝╚═╝╚═╝     ╚═════╝ ╚═════╝ 
+                                                                    
+
+    '''
+    print(f"\n{Fore.RED}\t Let's accelerate your threat hunting process\n")
+    print(f"{Fore.GREEN}{banner}\n")
+    print("      ------------------------------------------------------------------")
+    print("\n\t| TOOL    :  AbuseIPdb Scanner \t\t|")
+    print("\t| AUTHOR  :  themalwarenews ( @themalwarenews)  |")      
+    print("\t| VERSION :  1.0  \t\t\t\t|\n")
+    print(f"      ------------------------------------------------------------------\n\n{Fore.White}")
 
 
 # Setup API Key
@@ -270,6 +291,7 @@ def get_report(logs):
 
 
 def main():
+    welcome()
     if args.days:
         days = args.days
     else:
